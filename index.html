@@ -6,21 +6,22 @@
     <script type="text/javascript" src="_/app.js"></script>
 </head>
 <body>
-    <div id="somo" ng-controller="somo">
-        <input type="text" ng-model="dost" value="{{ dost }}" />
-        <input type="text" ng-model="handle" />
-        <div class="alert" ng-class="{ 'alert-danger': handle.length < characters,  'alert-success': handle.length == characters,  'alert-warning': handle.length > characters}">
-            <div ng-show="handle.length < characters">Must be at least {{characters}} characters.</div>
-            <div ng-show="handle.length == characters">That is great.</div>
-            <div ng-show="handle.length > characters">Not recommanded.</div>
-        </div>
-        <hr />
-        <h3>Your twitter is: twitter.com/{{ lowercasehandle() }}</h3>
-        <h4>Rules:</h4>
-        <ul>
-            <li ng-repeat="rule in rules"><strong>{{ rule.who }}</strong> you {{ rule.rulename }}</li>
-        </ul>
-    
+    <div id="somo" class="container" ng-controller="somo">
+		<div class="row"><h1>This is just for testing</h1></div>
+		<div class="row">
+			<input type="text" ng-model="handle" />
+			<div class="alert" ng-class="{ 'alert-danger': handle.length < characters,  'alert-success': handle.length == characters,  'alert-warning': handle.length > characters}">
+				<div ng-show="handle.length < characters">Must be at least {{characters}} characters.</div>
+				<div ng-show="handle.length == characters">That is great.</div>
+				<div ng-show="handle.length > characters">Not recommanded.</div>
+			</div>
+			<hr />
+			<h3>Your twitter is: twitter.com/{{ lowercasehandle() }}</h3>
+			<h4>Rules:</h4>
+			<ul>
+				<li ng-repeat="rule in rules"><strong>{{ rule.who }}</strong> you {{ rule.rulename }}</li>
+			</ul>
+		</div>
     </div>
 </body>
 </html>

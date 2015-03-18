@@ -12,19 +12,10 @@ myApp.controller('somo', ['$scope', '$filter', '$http', function($scope, $filter
         console.log('Old: ' + oldVal, 'New: ' + newVal);
     });
     
-    $http({
-        method: 'GET',
-        url: 'http://ron.developsmith.com/api'
-    }).success(function(data, status, headers, config) {
-        console.log(data);
-    }).error(function(data, status, headers, config) {
-        alert('Error!');
-    });
-    
-    /*$scope.rules = [
+    $scope.rules = [
         {who: 'Sponge', rulename: 'must come early.'},
         {who: 'Loza', rulename: 'must be happy.'},
         {who: 'Bebo', rulename: 'must do your duty.'}
-    ];*/
+    ];
 
 }]);
