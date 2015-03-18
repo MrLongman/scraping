@@ -1,0 +1,26 @@
+<html ng-app="appyto">
+<head>
+	<title>Testing</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+	<script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <div id="somo" ng-controller="somo">
+        <input type="text" ng-model="dost" value="{{ dost }}" />
+        <input type="text" ng-model="handle" />
+        <div class="alert" ng-class="{ 'alert-danger': handle.length < characters,  'alert-success': handle.length == characters,  'alert-warning': handle.length > characters}">
+            <div ng-show="handle.length < characters">Must be at least {{characters}} characters.</div>
+            <div ng-show="handle.length == characters">That is great.</div>
+            <div ng-show="handle.length > characters">Not recommanded.</div>
+        </div>
+        <hr />
+        <h3>Your twitter is: twitter.com/{{ lowercasehandle() }}</h3>
+        <h4>Rules:</h4>
+        <ul>
+            <li ng-repeat="rule in rules"><strong>{{ rule.who }}</strong> you {{ rule.rulename }}</li>
+        </ul>
+    
+    </div>
+</body>
+</html>
